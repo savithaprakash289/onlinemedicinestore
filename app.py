@@ -4,8 +4,8 @@ app = Flask(__name__)
 
 app.config['MYSQL_HOST'] = "localhost"
 app.config['MYSQL_USER'] = "root"
-app.config['MYSQL_PASSWORD'] = ""
-app.config['MYSQL_DB'] = "users_db"
+app.config['MYSQL_PASSWORD'] = "admin@123"
+app.config['MYSQL_DB'] = "online_medicines_store"
 
 mysql = MySQL(app)
 
@@ -16,7 +16,7 @@ def index():
         mobile_no = request.form["mobile_no"]
         age = request.form["age"]
         address = request.form["address"]
-        prescription = request.files["prescription"]
+        prescription = request.form["prescription"]
 		
         cur = mysql.connection.cursor()
 
